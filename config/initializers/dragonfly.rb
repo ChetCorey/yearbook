@@ -9,7 +9,6 @@ Dragonfly.app.configure do
   protect_from_dos_attacks true
   secret "3204796a8c63dd2adef4c33e6509b1c974d393db3c88002a5c70c9b7815a18e4"
 
-  url_host "http://localhost:3000"
   url_format "/media/:job/:name"
   # remote_url_for(:s3)
   #datastore :file,
@@ -26,7 +25,7 @@ Dragonfly.app.configure do
         #app_secret:           ENV['DROPBOX_APP_SECRET'],
         #access_token:         ENV['DROPBOX_ACCESS_TOKEN'],
         #access_token_secret:  ENV['DROPBOX_ACCESS_TOKEN_SECRET'],
-        #user_id:              ENV['DROPBOX_USER_ID'],     
+        #user_id:              ENV['DROPBOX_USER_ID'],
         #root_path:            Rails.env # optional
 end
 
