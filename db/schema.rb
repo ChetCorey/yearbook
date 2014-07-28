@@ -11,10 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140724222617) do
+ActiveRecord::Schema.define(version: 20140725191046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cohorts", force: true do |t|
+    t.string   "year"
+    t.string   "season"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "courses", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", force: true do |t|
+    t.string   "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -31,21 +50,25 @@ ActiveRecord::Schema.define(version: 20140724222617) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.integer  "course_id"
+    t.integer  "role_id"
+    t.integer  "cohort_id"
     t.string   "name"
     t.string   "twitter"
     t.string   "github"
     t.string   "linkedin"
     t.string   "image_uid"
-    t.string   "course"
-    t.string   "role"
-    t.string   "cohort"
     t.text     "bio"
     t.boolean  "admin"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "authentication_token"
   end
 
+  add_index "users", ["cohort_id"], name: "index_users_on_cohort_id", using: :btree
+  add_index "users", ["course_id"], name: "index_users_on_course_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["role_id"], name: "index_users_on_role_id", using: :btree
 
 end
