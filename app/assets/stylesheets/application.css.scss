@@ -1,4 +1,4 @@
-@import "bourbon";	
+@import "bourbon";
 @import "base/_base";
 @import "neat";
 
@@ -51,9 +51,9 @@ header {
 
 //  .directory-container {
 //   @include span-columns(12);
- 	
+
 // }
-  
+
 //LOGIN FORM STYLES
 .form {
 	@include span-columns(6);
@@ -103,7 +103,7 @@ header {
   .hover-tile-visible {
     color: transparentize(white, .3);
     font-size: 2em;
-    font-weight: 200;  
+    font-weight: 200;
     padding-top: 2em;
     text-align: center;
   }
@@ -184,7 +184,7 @@ html, body {
 
   .footer-logo img {
     height: 1.6em;
-  } 
+  }
 
   ul {
     margin-bottom: 1em;
@@ -253,4 +253,3 @@ html, body {
     }
   }
 }
-

@@ -14,6 +14,9 @@
 		twitter: "@user1#{n}",
 		github: "ghuser1#{n}",
 		linkedin: "liuser1#{n}",
+		cohort_id: 1,
+		course_id: 1,
+		role_id: 2,
 		bio: Faker::Lorem.paragraph,
 		admin: true)
 end
@@ -26,6 +29,9 @@ end
 		twitter: "@user2#{n}",
 		github: "ghuser2#{n}",
 		linkedin: "liuser2#{n}",
+		cohort_id: 2,
+		course_id: 2,
+		role_id: 1,
 		bio: Faker::Lorem.paragraph,
 		admin: false)
 end
@@ -38,6 +44,9 @@ end
 		twitter: "@user3#{n}",
 		github: "ghuser3#{n}",
 		linkedin: "liuser3#{n}",
+		cohort_id: 1,
+		course_id: 1,
+		role_id: 1,
 		bio: Faker::Lorem.paragraph,
 		admin: false)
 end
@@ -50,6 +59,9 @@ end
 		twitter: "@user4#{n}",
 		github: "ghuser4#{n}",
 		linkedin: "liuser4#{n}",
+		cohort_id: 1,
+		course_id: 1,
+		role_id: 1,
 		bio: Faker::Lorem.paragraph,
 		admin: false)
 end
@@ -62,6 +74,9 @@ end
 		twitter: "@user5#{n}",
 		github: "ghuser5#{n}",
 		linkedin: "liuser5#{n}",
+		cohort_id: 1,
+		course_id: 1,
+		role_id: 1,
 		bio: Faker::Lorem.paragraph,
 		admin: false)
 end
