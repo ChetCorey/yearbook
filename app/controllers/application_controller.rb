@@ -3,24 +3,23 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   #protect_from_forgery with: :null_session
 
+  # before_filter :authenticate_user_from_token!
   # This is Devise's authentication
- #  before_filter :authenticate_user!
-   before_action :configure_permitted_parameters, if: :devise_controller?
- #  before_filter :authenticate_user_from_token!
+  # before_filter :authenticate_user!
+
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :image
-    devise_parameter_sanitizer.for(:sign_up) << :name
-    devise_parameter_sanitizer.for(:sign_up) << :twitter
-    devise_parameter_sanitizer.for(:sign_up) << :github
-    devise_parameter_sanitizer.for(:sign_up) << :linkedin
-    devise_parameter_sanitizer.for(:sign_up) << :course_id
-    devise_parameter_sanitizer.for(:sign_up) << :role_id
-    devise_parameter_sanitizer.for(:sign_up) << :cohort_id
-    devise_parameter_sanitizer.for(:sign_up) << :bio
-    devise_parameter_sanitizer.for(:sign_up) << :admin
+    devise_parameter_sanitizer.for(:sign_up) do |u|
+      u.permit(:name, :email, :password, :password_confirmation, :image, :twitter,
+      :github, :linkedin, :course_id, :role_id, :cohort_id, :bio, :admin)
+    end
+    devise_parameter_sanitizer.for(:account_update) do |u|
+      u.permit(:name, :email, :password, :password_confirmation, :image, :twitter,
+      :github, :linkedin, :course_id, :role_id, :cohort_id, :bio, :admin, :current_password)
+    end
   end
 
   private
@@ -36,5 +35,4 @@ class ApplicationController < ActionController::Base
       sign_in user, store: false
     end
   end
-
 end

@@ -25,7 +25,7 @@ Dragonfly.app.configure do
         #app_secret:           ENV['DROPBOX_APP_SECRET'],
         #access_token:         ENV['DROPBOX_ACCESS_TOKEN'],
         #access_token_secret:  ENV['DROPBOX_ACCESS_TOKEN_SECRET'],
-        #user_id:              ENV['DROPBOX_USER_ID'],     
+        #user_id:              ENV['DROPBOX_USER_ID'],
         #root_path:            Rails.env # optional
 end
 
