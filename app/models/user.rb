@@ -53,7 +53,6 @@ class User < ActiveRecord::Base
     end
   end
 
-
   private
 
   def generate_authentication_token

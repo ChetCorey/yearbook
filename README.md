@@ -26,6 +26,11 @@ rake db:create db:migrate db:seed
 
 After that, you can run `rails server` to start the server or `rails console` for a REPL.
 
+To edit a user go to:
+```sh
+http://localhost:3000/users/edit
+```
+
 ## Contributing
 
 If you are new to using git and GitHub, follow these directions:
