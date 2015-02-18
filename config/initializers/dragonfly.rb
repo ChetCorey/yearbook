@@ -17,8 +17,8 @@ Dragonfly.app.configure do
 
   datastore :s3,
     bucket_name: 'tiy_yearbook',
-    access_key_id: 'AKIAIS5AYCMA5ATS4K7A',
-    secret_access_key: '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'
+    access_key_id: '',
+   '
 
   #datastore :dropbox,
         #app_key:              ENV['DROPBOX_APP_KEY'],
